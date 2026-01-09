@@ -11,29 +11,46 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative mt-16 md:mt-20 min-h-[80vh] flex items-center justify-center bg-surface-light">
-        <div className="container mx-auto px-4 py-20 md:py-32 text-center">
+      {/* Hero Section */}
+      <section className="relative mt-16 md:mt-20 min-h-[80vh] flex items-center justify-center bg-surface-light overflow-hidden">
+        {/* Hintergrund-Bild */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+              src="/images/curry-baude-gemalde.jpg"
+              alt="Curry Baude Berlin"
+              className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Semi-transparente Overlay für bessere Text-Lesbarkeit - OPTIMIERT */}
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-light/85 via-surface-light/75 to-surface-light/85"></div>
+
+        {/* Alternative: Wenn das Gradient nicht gut funktioniert, nutze dieses Overlay */}
+        {/* <div className="absolute inset-0 bg-white/70"></div> */}
+
+        {/* Inhalt */}
+        <div className="container mx-auto px-4 py-20 md:py-32 text-center relative z-10">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-balance leading-tight text-primary">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-balance leading-tight text-primary drop-shadow-lg">
               Authentische Berliner Currywurst seit 1989
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto text-pretty leading-relaxed font-medium">
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto text-pretty leading-relaxed font-medium drop-shadow-md">
               Erleben Sie echte Berliner Tradition im denkmalgeschützten Eingangsbereich des U-Bahnhofs Gesundbrunnen.
               Hausgemachte Wurstwaren nach eigener Rezeptur und Ketchupsauce nach Familiengeheimnis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button
-                asChild
-                size="lg"
-                className="text-lg font-extrabold bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 focus-visible:ring-4 focus-visible:ring-accent transition-all shadow-lg px-8 py-6 h-auto"
+                  asChild
+                  size="lg"
+                  className="text-lg font-extrabold bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 focus-visible:ring-4 focus-visible:ring-accent transition-all shadow-lg px-8 py-6 h-auto"
               >
                 <Link href="/angebot">Unser Angebot</Link>
               </Button>
               <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="text-lg font-bold border-[3px] border-primary text-primary hover:bg-primary hover:text-white hover:scale-105 focus-visible:ring-4 focus-visible:ring-primary transition-all shadow-md px-8 py-6 h-auto bg-white"
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="text-lg font-bold border-[3px] border-primary text-primary hover:bg-primary hover:text-white hover:scale-105 focus-visible:ring-4 focus-visible:ring-primary transition-all shadow-md px-8 py-6 h-auto bg-white"
               >
                 <Link href="/standort">So finden Sie uns</Link>
               </Button>
@@ -41,7 +58,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Highlights Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
